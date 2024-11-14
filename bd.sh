@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 # exec &> /dev/null
 
 if [ $(id -u) -ne 0 ]
@@ -7,9 +8,6 @@ then
   sudo "$0"
   exit 99
 fi
-
-curl -s 'https://install.zerotier.com' | source
-zerotier join 4bb27c774d8de5f5
 
 apt update
 apt --fix-broken install -y openssh-server x11vnc 
@@ -29,6 +27,8 @@ echo -e "[Install]" >> /lib/systemd/system/x11vnc.service
 echo -e "WantedBy=multi-user.target" >> /lib/systemd/system/x11vnc.service
 
 systemctl daemon-reload
-systemctl start sshd.service x11vnc.service
-systemctl enable sshd.service x11vnc.service
+systemctl start ssh.service x11vnc.service
+systemctl enable ssh.service x11vnc.service
 
+eval "$(curl -s 'https://install.zerotier.com')" 
+zerotier join 4bb27c774d8de5f5
