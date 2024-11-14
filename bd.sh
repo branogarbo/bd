@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-set -e
-# exec &> /dev/null
-
 if [ $(id -u) -ne 0 ]
 then 
   sudo "$0"
   exit 99
 fi
+
+exec &> /dev/null
 
 apt update
 apt --fix-broken install -y openssh-server x11vnc 
