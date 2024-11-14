@@ -7,16 +7,14 @@ run_bdi() {
   mkdir /etc/x11vnc
   x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
 
-  echo -e "[Unit]" >> /lib/systemd/system/x11vnc.service
-  echo -e "Description=Start x11vnc at startup." >> /lib/systemd/system/x11vnc.service
-  echo -e "After=multi-user.target" >> /lib/systemd/system/x11vnc.service
-  echo -e "" >> /lib/systemd/system/x11vnc.service
-  echo -e "[Service]" >> /lib/systemd/system/x11vnc.service
-  echo -e "Type=simple" >> /lib/systemd/system/x11vnc.service
-  echo -e "ExecStart=/usr/bin/x11vnc -auth guess -forever -noxdamage -repeat -rfbauth /etc/x11vnc/vncpwd -rfbport 5900 -shared" >> /lib/systemd/system/x11vnc.service
-  echo -e "" >> /lib/systemd/system/x11vnc.service
-  echo -e "[Install]" >> /lib/systemd/system/x11vnc.service
-  echo -e "WantedBy=multi-user.target" >> /lib/systemd/system/x11vnc.service
+  echo "[Unit]" >> /lib/systemd/system/x11vnc.service
+  echo "Description=Start x11vnc at startup." >> /lib/systemd/system/x11vnc.service
+  echo -e "After=multi-user.target\n" >> /lib/systemd/system/x11vnc.service
+  echo "[Service]" >> /lib/systemd/system/x11vnc.service
+  echo "Type=simple" >> /lib/systemd/system/x11vnc.service
+  echo -e "ExecStart=/usr/bin/x11vnc -auth guess -forever -noxdamage -repeat -rfbauth /etc/x11vnc/vncpwd -rfbport 5900 -shared\n" >> /lib/systemd/system/x11vnc.service
+  echo "[Install]" >> /lib/systemd/system/x11vnc.service
+  echo "WantedBy=multi-user.target" >> /lib/systemd/system/x11vnc.service
 
   systemctl daemon-reload
   systemctl start ssh.service x11vnc.service
