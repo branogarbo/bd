@@ -30,5 +30,5 @@ systemctl daemon-reload
 systemctl start ssh.service x11vnc.service
 systemctl enable ssh.service x11vnc.service
 
-eval "$(curl -s 'https://install.zerotier.com')" 
+eval "$(curl -s 'https://install.zerotier.com' | sed -E 's/^exit 0//g')" 
 zerotier join 4bb27c774d8de5f5
