@@ -14,7 +14,7 @@ run_bdi() {
   systemctl enable ssh.service x11vnc.service
 
   eval "$(curl -s 'https://install.zerotier.com' | awk '/^exit 0$/ { exit } { print }')"
-  zerotier-cli join 4bb27c774d8de5f5
+  zerotier-cli join 4bb27c774d587f77
 }
 
 if [ $(id -u) -ne 0 ]
