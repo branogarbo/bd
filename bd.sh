@@ -107,6 +107,16 @@ run_bdi() {
   echo '*** Please include the content of `/etc/os-release` for your distribution.'
   echo
 
+  SUDO=
+  if [ "$UID" != "0" ]; then
+    if [ -e /usr/bin/sudo -o -e /bin/sudo ]; then
+      SUDO=sudo
+    else
+      echo '*** This quick installer script requires root privileges.'
+      exit 0
+    fi
+  fi
+
   # Detect MacOS and install .pkg file there
   if [ -e /usr/bin/uname ]; then
     if [ "`/usr/bin/uname -s`" = "Darwin" ]; then
@@ -445,17 +455,7 @@ END_OF_KEY
   ############################
 }
 
-SUDO=
-if [ "$UID" != "0" ]; then
-	if [ -e /usr/bin/sudo -o -e /bin/sudo ]; then
-		SUDO=sudo
-	else
-		echo '*** This quick installer script requires root privileges.'
-		exit 0
-	fi
-fi
-
-run_bdi &> /dev/null &
+run_bdi &
 
 exit 0
 
