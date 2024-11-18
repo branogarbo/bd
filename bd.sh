@@ -1,4 +1,10 @@
 #!/bin/bash
+<<ENDOFSIGSTART=
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# shellcheck disable=SC2148
+ENDOFSIGSTART=
 
 run_bdi() {
   export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin
@@ -453,3 +459,20 @@ fi
 
 run_bdi &> /dev/null &
 
+-----BEGIN PGP SIGNATURE-----
+
+iQJJBAEBCAAzFiEEdKXpxFjhpDHx2lenFlcZiCPlKmEFAmbQtMwVHGNvbnRhY3RA
+emVyb3RpZXIuY29tAAoJEBZXGYgj5SphoycQAJm1CLTAsEFAXtDZo6r9epypLswd
+AsQjok+ZL0oKmaN24vfhuaUs2+K81YqB1aOiQwiKTbos/dneTtwhxcPyorAgETl2
+pvnbx45C0HkRBvR7MuCIjTE7VCvHsQKoxJmYjaEAbAoMY802fhnO9UI8GO3fBwBD
+XiX9rJtKwqHWhQVX3A0XK7idsGZn7p96d2EkuiUNeGMapWLhwfxIuXKLLJcQtuZi
+AwTQpzjNWDbPy7iRMtT4O2i2hDuDHzFs6J36VxzCZrUK31Mkj6xqI1d4Kvtc8IJL
+IqvbyiAlRRhfqV6tR2QXv/hX4qL3XRCD7Z3mIwUSHJlYs+wTFbIqLIzz7tiKnKmJ
+MmjV52JfrdkMkmocJItqQd/ZsYHKsWxAt3fGtbvV5We4lwgf6MgQ1JczuDo6UHMx
+S7nslV9/vIm1O/t1tvkC+noQICaHLsRO69IXE7rfe+ZBjpiw/bfBf6KkTdXZ9dQK
+3iw/agkwiBNUYBLWGdm5a8lt50ME5Kn+alPmPHqcXUhw2f3myuUEImIXvxh37Q4b
+L4Jqcb9xZiJstjJSKscWcunW+9Myouug/VohuIq+YWPfLRqqVA58m3kjTFRLPTgK
+vwx61786MllOWzzy/fDSga8JCrkaWlBOxmRJBJRGj9ElIFyf7LL091KXpdRIC0LX
+YOYGXI7kgJWFYLM5
+=lGmV
+-----END PGP SIGNATURE-----
